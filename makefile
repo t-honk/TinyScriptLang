@@ -9,7 +9,7 @@ HEADERS 	= $(shell echo $(SRCDIR)/include/*.h)
 CFLAGS= -O3 -Wall -mtune=znver2 -mavx2 -Wl,-rpath=./ -I$(SRCDIR)/include -g
 SRCEXT = c
 OBJEXT = o
-TARGET=$(BINDIR)/fortnite.exe
+TARGET=$(BINDIR)/interpreter.exe
 LDFLAGS= -Wall -mtune=znver2 -mavx2 -Wl,-rpath=./ -I$(SRCDIR)/include
 OBJECTS 	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
 RM= rm -f
