@@ -1,10 +1,13 @@
 ##Introduction
+
 TinyScriptLang is an interpreted automation scripting language that enables users to execute mouse and keyboard functions with simple syntax for desktop automation. The interpreter is written in C and uses the Windows API to send input. This means that ONLY Windows is supported.
 
 ##Usage
+
 In the releases you can find the compiled interpreter, or you can compile it from source. Once you have the interpreter, create a .tsl file and write some commands. Run the interpreter in the command line, and give it your .tsl file as the only argument.
 
 ##Compiling
+
 I have included a makefile that I use to build for Windows using mingw. Run `make windows` from the root of the repo. There are presently no external libraries outside of the Windows API.
 
 ##Basic Documentation
@@ -32,7 +35,7 @@ The `hover` method is used to move the mouse to specified screen coordinates. (w
 The `key` method is used to execute a keystroke with a given keycode.
 
 ####Parameters
-- `keyCode` (string, int): Accepts both string and integer arguments, valid keycodes can be found at https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes and valid string representations can be found in keycodes.json
+- `keyCode` (string, int): Accepts both string and integer arguments, valid keycodes can be found at https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes and valid string representations can be found in keycodes.txt
 
 ####`sleep`
 Pauses execution for a given amount of time
@@ -46,7 +49,7 @@ Pauses execution for a given amount of time
 - Add error checking for the .tsl file (syntax errors, formatting, etc.)
 - Add hotkey support to fire scripts, with toggle as an option
 - Add support for basic arithmetic
- 
+
 ### Maybes
 - Add Loop functionality
 - Add Labels / Variables 
