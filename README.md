@@ -44,7 +44,7 @@ Pauses execution for a given amount of time
 - `ms` (int): How many milliseconds to pause execution for.
 
 
-##TODO
+## TODO
 - Add error checking in the interpreter (filetype, read errors, etc.)
 - Add error checking for the .tsl file (syntax errors, formatting, etc.)
 - Add hotkey support to fire scripts, with toggle as an option
