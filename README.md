@@ -13,6 +13,16 @@ I have included a makefile that I use to build for Windows using mingw. Run `mak
 ## Basic Documentation
 ### *Will be moved into separate file if it grows too large*
 
+**Note**: Shift + F1 Is the current emergency stop key combination. This will be modifiable in the future. It is intended to break you out of any infinite loops you may accidentally create that cause you to lose control of your mouse / keyboard to stop it.
+
+#### `hotkey` 
+
+The `hotkey` method is used to set the hotkey that will be used to execute your script.
+*IMPORTANT*: Hotkey MUST be called first, at the top of every .tsl file for it to be valid.
+
+#### Parameters
+- `keyCode` (string, int): Accepts both string and integer arguments, valid keycodes can be found at https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes and valid string representations can be found in keycodes.txt
+
 #### `click`
 
 The `click` method is used to execute a mouse click at specified screen coordinates.
@@ -47,7 +57,7 @@ Pauses execution for a given amount of time
 ## TODO
 - Add error checking in the interpreter (filetype, read errors, etc.)
 - Add error checking for the .tsl file (syntax errors, formatting, etc.)
-- Add hotkey support to fire scripts, with toggle as an option
+- Add hotkey support to fire scripts, with toggle as an option for looping the file.
 - Add support for basic arithmetic
 
 ### Maybes

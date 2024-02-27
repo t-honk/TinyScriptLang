@@ -1,16 +1,19 @@
-#include "scriptactions.h"
+#include "interpactions.h"
 #include <windows.h>
 #include <winuser.h>
 
-void sleep(int ms)
+void sleep(int *data)
 {
-    Sleep(ms);
+    Sleep(data[0]);
 }
 
-void click(int x, int y, int mouseButton)
+void click(int *data)
 {
+    int mouseButton = data[2];
+
     int winMouseDown = (mouseButton == 0) ? MOUSEEVENTF_LEFTDOWN : MOUSEEVENTF_RIGHTDOWN;
     int winMouseUp = (mouseButton == 0) ? MOUSEEVENTF_LEFTUP : MOUSEEVENTF_RIGHTUP;
+
     INPUT input;
     input.type = INPUT_MOUSE;
     input.mi.dx = 0;
@@ -20,20 +23,24 @@ void click(int x, int y, int mouseButton)
     input.mi.dwExtraInfo = 0;
 
     input.mi.dwFlags = winMouseDown;
-    hover(x, y);
+    hover(data);
     SendInput(1, &input, sizeof(input));
 
     input.mi.dwFlags = winMouseUp;
     SendInput(1, &input, sizeof(input));
 }
 
-void hover(int x, int y)
+void hover(int *data)
 {
+    int x = data[0];
+    int y = data[1];
     SetCursorPos(x, y);
 }
 
-void key(int keyCode)
+void key(int *data)
 {
+    int keyCode = data[0];
+
     INPUT input;
     input.type = INPUT_KEYBOARD;
     input.ki.wScan = 0;

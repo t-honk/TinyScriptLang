@@ -114,5 +114,5 @@ int getKeyCode(const char *keyName)
         }
     }
 
-    return -1;
+    return 0;
 }
