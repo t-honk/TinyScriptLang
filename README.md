@@ -15,39 +15,39 @@ I have included a makefile that I use to build for Windows using mingw. Run `mak
 
 **Note**: Shift + F1 Is the current emergency stop key combination. This will be modifiable in the future. It is intended to break you out of any infinite loops you may accidentally create that cause you to lose control of your mouse / keyboard to stop it.
 
-#### `hotkey` 
+#### `HKEY` 
 
-The `hotkey` method is used to set the hotkey that will be used to execute your script.
+The `HKEY` method is used to set the hotkey that will be used to execute your script.
 *IMPORTANT*: Hotkey MUST be called first, at the top of every .tsl file for it to be valid.
 
 #### Parameters
 - `keyCode` (string, int): Accepts both string and integer arguments, valid keycodes can be found at https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes and valid string representations can be found in keycodes.txt
 
-#### `click`
+#### `MCLK`
 
-The `click` method is used to execute a mouse click at specified screen coordinates.
+The `MCLK` (mouse click) method is used to execute a mouse click at specified screen coordinates.
 
 #### Parameters
 - `x` (integer): The x screen-coordinate where the click will occur.
 - `y` (integer): The y screen-coordinate where the click will occur.
 - `mouseButton` (optional, string): The mouse button to use for the click. Possible values are `LEFT` or `RIGHT`. Defaults to `LEFT` if not specified.
 
-#### `hover`
+#### `MMOV`
 
-The `hover` method is used to move the mouse to specified screen coordinates. (without clicking)
+The `MMOV` (mouse move) method is used to move the mouse to specified screen coordinates. (without clicking)
 
 #### Parameters
 - `x` (integer): The x screen-coordinate where the mouse will move to.
 - `y` (integer): The y screen-coordinate where the mouse will move to.
 
-#### `key`
+#### `KPRS`
 
-The `key` method is used to execute a keystroke with a given keycode.
+The `KPRS` (key press) method is used to execute a keystroke with a given keycode.
 
 #### Parameters
 - `keyCode` (string, int): Accepts both string and integer arguments, valid keycodes can be found at https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes and valid string representations can be found in keycodes.txt
 
-#### `sleep`
+#### `PAUS`
 Pauses execution for a given amount of time
 
 #### Parameters
@@ -57,7 +57,8 @@ Pauses execution for a given amount of time
 ## TODO
 - Add error checking in the interpreter (filetype, read errors, etc.)
 - Add error checking for the .tsl file (syntax errors, formatting, etc.)
-- Add hotkey support to fire scripts, with toggle as an option for looping the file.
+- ~~Add hotkey support to fire scripts~~ 
+- Add toggle as an option to hotkeys for looping the file.
 - Add support for basic arithmetic
 
 ### Maybes
